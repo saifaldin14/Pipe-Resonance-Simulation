@@ -111,9 +111,31 @@ const drawTube = (posX, posY, width, height) => {
     c.restore();
 }
 
+const drawOutline = (posX, posY, width, height) => {
+    c.save();
+    c.beginPath();
+    c.strokeStyle = "#668cff";
+    c.rect(posX, posY, width, height);
+    c.stroke();
+    c.restore();
+}
+
+const connectingCircle = (posX, posY, radius) => {
+    c.arc(posX, posY, radius, 0, Math.PI, false);
+    c.lineWidth = 5;
+    c.strokeStyle = '#668cff';
+    c.stroke();
+}
+
 const startPos = () => {
     //drawTube(100, 150, 50, 400);
-    drawTube(175, 150, 20, 400); //Increase the y pos by the same amount you decrease the height
+    drawOutline(100, 150, 50, 300);
+    drawTube(175, 150, 20, 400); //The stand for the tube
+    drawTube(150, 300, 40, 10); //The connecting pillar for the tube
+
+    //drawTube(275, 350, 50, 50);
+    drawTube(350, 150, 20, 400); //The stand for the box
+    connectingCircle(210, 450, 87.5);
 }
 
 startPos();
@@ -123,7 +145,15 @@ function animateBox () {
     const currPos = position;
     console.log(currPos);
     drawImage();
-    drawTube(100, 150 + (400-currPos), 50, currPos);
+    startPos();
+
+
+    //Increase the y pos by the same amount you decrease the height
+    drawTube(100, 50 + (400 - currPos), 50, currPos); //Draw the increase water tube
+    drawTube(275, 500 - (400 - currPos), 50, 50); //Draw the increasing box for the water
+
+    drawTube(295, 500 - (400 - currPos), 5, 350 - currPos); //Draw the connecting tube for the box
+    drawTube(320, 520 - (400 - currPos), 40, 10);
     requestAnimationFrame(animateBox);
 }
 animateBox();
