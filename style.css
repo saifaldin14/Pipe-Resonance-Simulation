@@ -24,10 +24,6 @@ label {
 #wood {
   display: none;
 }
-#wood2 {
-  display: none;
-}
-
 
 #submit_button {
   margin: 1rem;
@@ -47,6 +43,9 @@ label {
 
 #input-div {
   width: 50%;
+}
+#position {
+  width: 20rem;
 }
 /*
 #direction-buttons {

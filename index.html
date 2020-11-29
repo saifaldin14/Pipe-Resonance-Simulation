@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Critical Angle</title>
+    <title>Pipe Resonance</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" type="text/css" />
@@ -14,7 +14,7 @@
 <body>
     <div class="navbar navbar-expand-lg navbar-dark">
         <h1 class="navbar-brand">
-            Critical Angle Simulation
+            Pipe Resonance Simulation
         </h1>
     </div>
     <!-- <audio id="tuningFork" style="display:none;" autoplay>
@@ -22,13 +22,12 @@
     </audio> -->
 
     <!-- <audio id="audio" src="./sounds/tuningFork.ogg"></audio> -->
-    <audio id="audio">
-        <source src="./sounds/tuningFork2.ogg" type="audio/ogg">
-        <source src="./sounds/tuningFork2.mp3" type="audio/mpeg">
+    <audio id="audio" loop>
+        <source src="./sounds/oneKHz.ogg" type="audio/ogg">
+        <source src="./sounds/oneKHz.wav" type="audio/wav">
     </audio>
 
     <img id="wood" src="./assets/wood.jpg" /><br />
-    <img id="wood2" src="./assets/wood2.jpg" /><br />
     <div id="full-display">
         <canvas id="main" id="canvas-style">
         </canvas>
@@ -42,11 +41,11 @@
                     <span class="font-weight-bold text-primary ml-2 valueSpan2" id="positionLabel">50cm</span>
                     <!-- <span class="blue">cm</span> -->
                 </div>
-                <div id="div-label-3" class="row">
+                <!-- <div id="div-label-3" class="row">
                     <div class="col-sm-6">
                         <button onclick="playAudio()" id="submit_button" class="btn btn-success" type="button">Start</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
